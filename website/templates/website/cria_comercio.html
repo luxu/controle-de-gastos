@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Cadastro de Comércios{% endblock %}
+
+{% block conteudo %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Cadastro de Comércio</h5>
+          <p class="card-text">
+            Complete o formulário abaixo para cadastrar
+            um novo <code>Comércio</code>.
+          </p>
+          <form method="post">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome</span>
+              </div>
+              {% render_field form.name class+="form-control" %}
+            </div>
+
+            <!-- Slug -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Identificador</span>
+              </div>
+              {% render_field form.slug class+="form-control" %}
+            </div>
+
+            <button class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

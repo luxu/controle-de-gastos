@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Página Inicial{% endblock %}
+
+<!-- Bloco de conteúdo da nossa página -->
+{% block conteudo %}
+  <br /><br />
+  <div class="text-center">
+    <h1 class="card-title">Gerenciamento de Gastos</h1>
+    <figure class="figure">
+      <img src="{% static 'img/img_fundo.jpg' %}"
+          class="img-fluid rounded mx-auto d-block" alt="Responsive image">
+    </figure>
+  </div>
+{% endblock %}

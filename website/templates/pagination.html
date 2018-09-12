@@ -1,0 +1,22 @@
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-sm justify-content-center">
+            {% for page in paginator.page_range %}
+              {% if page_obj.number == page %}
+                <li class="page-item active">
+                  <a class="page-link" href="?page={{ page }}{{ getvars }}">{{ page }}
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+              {% else %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ page }}{{ getvars }}">{{ page }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </nav>
+    </div>
+</div>

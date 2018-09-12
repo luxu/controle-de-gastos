@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}Atualização de Dados do Gastos{% endblock %}
+
+{% block conteudo %}
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Atualização de Dados do Gasto</h5>
+          <form method="post">
+            <!-- Não se esqueça dessa tag -->
+            {% csrf_token %}
+
+            <!-- Nome -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Nome</span>
+              </div>
+              {% render_field form.name class+="form-control" %}
+            </div>
+
+            <!-- Slug -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Identificador</span>
+              </div>
+              {% render_field form.slug class+="form-control" %}
+            </div>
+
+            <!-- Valor -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Valor</span>
+              </div>
+              {% render_field form.valor class+="form-control" %}
+            </div>
+
+            <!-- Datagasto -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Data Gasto</span>
+              </div>
+              {% render_field form.datagasto class+="form-control" %}
+            </div>
+            </div>
+
+            <!-- Comercio -->
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text">Comércio</span>
+              </div>
+              {% render_field form.comercio class+="form-control" %}
+            </div>
+
+            <button class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
